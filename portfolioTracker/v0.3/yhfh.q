@@ -18,7 +18,8 @@ getTnQBySyms:{
 h:hopen 5010
 
 /timer frequency.
-t:1000*2publish:{neg[h](`.u.upd;x;y)}
+t:1000*2
+publish:{neg[h](`.u.upd;x;y)}
 
 getSyms:{
         Data:("SSS";enlist ",")0:`product.csv;
@@ -26,8 +27,7 @@ getSyms:{
         :res
         }
 
-/.z.ts:{syms:getSyms[];a:getTnQBySyms x:syms;publish[`quote;]each flip 5#flip x,'a;publish[`
-trade;]each x,'flip(-2#flip a)}
+/.z.ts:{syms:getSyms[];a:getTnQBySyms x:syms;publish[`quote;]each flip 5#flip x,'a;publish[`trade;]each x,'flip(-2#flip a)}
 
 .z.ts:{syms:getSyms[];a:getTnQBySyms x:syms;publish[`trade;]each x,'flip(-2#flip a);publish[`quote;]each flip 5#flip x,'a}
 
